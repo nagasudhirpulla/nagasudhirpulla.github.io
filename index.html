@@ -1,1 +1,29 @@
-<h1>Testing the Website</h1>
+<!DOCTYPE html>
+<html>
+<body>
+<p>Check if the string matches the criteria of <number>, 'FULL','NC',<number>P(For percentages)</p>
+<input type='text' id="testString"></input>
+<button onclick="myFunction()">TestForCellValues</button>
+<button onclick="myFunction1()">TestForBlockNumbers</button>
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var str = document.getElementById("testString").value;
+    //var isValid = /(\FULL|\NC|\d\P|\d)/i.test(str);
+    
+    document.getElementById('demo').innerHTML=''+isValid;
+}
+function myFunction1() {
+    var isValid = false;      
+    var num= document.getElementById("testString").value;
+    if(!isNaN(num) && Math.floor(num)==num && num>0 && num<97)
+    {
+      isValid = true;
+    }
+    document.getElementById('demo').innerHTML=''+isValid;
+}
+</script>
+</body>
+</html>
+
