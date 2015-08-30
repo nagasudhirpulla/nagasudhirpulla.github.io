@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 <body>
-<p>Check if the string matches the criteria of <number>, 'FULL','NC',<number>P(For percentages)</p>
+<p>Check if the string matches the criteria of numberP(For percentages),'FULL','NC',number</p>
 <input type='text' id="testString"></input>
 <button onclick="myFunction()">TestForCellValues</button>
 <button onclick="myFunction1()">TestForBlockNumbers</button>
 <p id="demo"></p>
-
 <script>
 function myFunction() {
     var str = document.getElementById("testString").value;
-    //var isValid = /(\FULL|\NC|\d\P|\d)/i.test(str);
-    
+var isValid = str.match(/^[+]?\d+(\.\d+)?\p$/i)||str.match(/^\FULL$/i)||str.match(/^\NC$/i)||str.match(/^[+]?\d+(\.\d+)?$/i);   
     document.getElementById('demo').innerHTML=''+isValid;
 }
 function myFunction1() {
@@ -26,4 +24,3 @@ function myFunction1() {
 </script>
 </body>
 </html>
-
